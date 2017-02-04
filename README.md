@@ -6,4 +6,13 @@
 * [基金聚类](finance/fund_clustering.html) *2017-01-21 20:39:29*
 * [读《金融的解释（王福重）》有感](finance/the_explanation_of_finance.html) *2016-12-06 21:53:51*
 * [总结:PHP和MYSQL Web开发(第四版)](web/php_and_mysql_web_development_book.html) *2016-11-12 15:20:56*
+* [用SQL完成推荐：推荐相似用户喜爱的物品](database/similar-users-recommendation.md) *2016-11-05 20:34:10*
+* [【总结】第三章：探索（profiling）服务器表现(HP-MySQL 3rd)](database/HP-MySQL-chapter-3-translation.pdf) *2016-08-22 16:31:56*
+* [【总结】第二章：MySQL基准测试(HP-MySQL 3rd)](database/HP-MySQL-chapter-2-translation.pdf) *2016-08-16*
+* [用SQL求得7日均和周均值](database/7-day-average-and-week-num.md) *2016-08-15 16:31:56*
+* [【译】第一章：MySQL的结构与历史（HP-MySQL 3rd)](database/HP-MySQL-chapter-1-translation.pdf) *2016-08-07*
+* [【译】cs231n第四课：理解后向传播](machine_learning/translating-cs231n-syllabus-4.pdf) *2016-07-25*
+* [【译】cs231n第三课：优化 - 随机梯度下降](machine_learning/translating-cs231n-syllabus-3.pdf) *2016-07-19*
+* [【译】cs231n第二课：线性分类 - SVM与Softmax](machine_learning/translating-cs231n-syllabus-2.pdf) *2016-07-15*
+* [【译】cs231n第一课:图片分类、数据驱动模型，k近邻算法，训练集、验证集、测试集的划分](machine_learning/translating-cs231n-syllabus-1.pdf) *2016-07-13*
 
