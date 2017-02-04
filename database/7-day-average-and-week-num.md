@@ -87,12 +87,12 @@ mysql> SELECT
 | 2014-03-10 00:00:00 |      10 |    5 |        0.7143 | 5.0000 |
 +---------------------+---------+------+---------------+--------+
 2 rows in set (0.00 sec)
-{% endcodeblock %}
+```
 
 
 
 再来一段纯代码：
-{% codeblock lang:sql %}
+```python
 select FROM_UNIXTIME(t1.x) as x, t1.nts, avg(t2.nts) as nts
 
 INSERT INTO some_data1 (unique_id, date, value) VALUES
