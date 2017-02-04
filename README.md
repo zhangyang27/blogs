@@ -1,5 +1,6 @@
 # blogs
 
+* [所有设计模式的要点](OOP/outline_of_design_pattern.md) *2017-02-04 16:44:37* 
 * [用java实现简洁版的快速排序](program_language/java/java_quick_sort.md) *2017-02-03 11:05:29*
 * [读《松本行弘的程序世界》有感](book/matsumoto_yukihiro_code_no_sekai.md) *2017-02-03 10:05:29*
 * [代理模式](OOP/proxy_pattern.html) *2017-01-28 11:34:03*
