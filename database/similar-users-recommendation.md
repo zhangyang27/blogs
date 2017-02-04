@@ -1,9 +1,5 @@
----
-title: 用SQL完成推荐：推荐相似用户喜爱的物品
-date: 2016-11-05 20:34:10
-tags:
- - MySQL
----
+##### 用SQL完成推荐：推荐相似用户喜爱的物品
+
 蛮惊喜，居然简单几句SQL就能完成。
 这个简单的推荐策略是：先找出与目标用户最相似的用户，也就是喜欢的物品重复最多的用户，再推荐相似用户已经喜欢，但是目标用户还没有喜欢的物品。
 
@@ -12,7 +8,7 @@ tags:
 Chapter 27 Building User Authentication and Personalization:Implementing Recommendations。
 
 
-{% codeblock lang:sql %}
+```python
 create table bookmark (
 	username varchar(16) not null,
 	bm_URL varchar(255) not null,
@@ -120,4 +116,4 @@ Jack	www.nuomi.cn	1
 
 */
 
-{% endcodeblock %}
+```

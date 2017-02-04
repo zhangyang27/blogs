@@ -1,15 +1,10 @@
----
-title: 用SQL求得7日均和周均值
-date: 2016-08-15 23:31:56
-tags:
- - MySQL
----
+##### 用SQL求得7日均和周均值
 
 7日均：当天的数与前6天的数之和，求均值。示例代码会计算2日均。
 周均值是：周一至周日的数之和，求均值。
 
 直接看代码吧
-{% codeblock lang:sql %}
+```python
 mysql> CREATE TABLE some_data1 (unique_id text, date date, value integer);
 Query OK, 0 rows affected (0.01 sec)
 
@@ -155,8 +150,7 @@ FROM
 	GROUP BY time
 ) s
 GROUP BY weekNum;
-{% endcodeblock %}
-
+```
 * ON t2.date >=t1.date-(1\*24\*3600) and t2.date<=t1.date : 把这句的1\*24\*3600的1改为7，就是7日均。
 * FLOOR((time-1388332800)/(7*24*3600)) as weekNum: 1388332800是一个开始日期，是2013-12-30，我选择最一天作为第一周（会计算得到0）。
 
