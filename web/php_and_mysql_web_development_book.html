@@ -1,0 +1,159 @@
+<html>
+<head>
+  <title>BLOG - zhangyang27</title>
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.bootcss.com/highlight.js/9.8.0/highlight.min.js"></script>
+	<link href="https://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body style="padding: 20px;">
+<h2>总结:PHP和MYSQL Web开发(第四版)<small> 2016-11-12 15:20:56</small></h2>
+<p>从部门书柜借得此<a href="https://book.douban.com/subject/3549421/">书</a>， 利用课余时间读完了， 下面总结几个生疏之处。 </p>
+<ol>
+	<li><a href='http://php.net/manual/en/functions.arguments.php'>参数引用</a>的方式： 主要是区别按参数传递和按引用传递, 按参数传递时可认为是创建了一个副本， 按引用传递即是直接将同一个对象传递过去。 
+	</li>
+	<li>
+		<a href="http://php.net/manual/en/function.array-walk.php">array_walk</a>
+		与
+		<a href="http://php.net/manual/en/function.array-walk-recursive.php"> array_walk_recursive</a>
+		：像极了python的map
+	</li>
+	<li>
+	正则表达式匹配特殊字符时，最好使用单引号，双引号将带来不必要的复杂性。比如，匹配一个反斜杠，单引号中则需要两个反斜杠，双引号中则需要四个反斜杠。因为php会将双引号内的四个反斜杠翻译成两个，正则表达式再翻译成一个。
+
+	</li>
+	<li>
+		<a href="http://php.net/manual/en/language.types.string.php">单双引号的区别</a>
+		：主要是双引号会做一次解释或者解析，比如\t转变为制表符。此外，在双引号中可以直接使用变量。
+	</li>
+	<li>
+		<a href="http://php.net/manual/en/function.func-get-arg.php">函数的可变参数</a>
+		：func_get_arg(),func_get_args()和func_num_args()比较有意思。可以让函数不声明参数列表，然后直接传给函数参数，再使用这个三个函数来获得参数。
+
+	</li>
+	<li>
+		递归比for循环费内存：可以使用
+		<a href="http://php.net/manual/en/function.memory-get-usage.php">memory_get_usage</a>
+		来随时查看内存。
+	</li>
+	<li>
+		HTML有一个Metatags标签，这个标签的内容将会搜索引擎收录。
+	</li>
+	<li>
+		可以从
+		<a href="http://php.net/manual/en/reserved.variables.server.php">$_SERVER</a>
+		里获得一系列参数。例子如下：
+<pre>
+PHP_SELF    /server_indices.php 
+argv    - 
+argc    - 
+GATEWAY_INTERFACE    CGI/1.1 
+SERVER_ADDR    127.0.0.1 
+SERVER_NAME    localhost 
+SERVER_SOFTWARE    Apache/2.2.22 (Win64) PHP/5.3.13 
+SERVER_PROTOCOL    HTTP/1.1 
+REQUEST_METHOD    GET 
+REQUEST_TIME    1361542579 
+REQUEST_TIME_FLOAT    - 
+QUERY_STRING    
+DOCUMENT_ROOT    E:/web/ 
+HTTP_ACCEPT    text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 
+HTTP_ACCEPT_CHARSET    ISO-8859-1,utf-8;q=0.7,*;q=0.3 
+HTTP_ACCEPT_ENCODING    gzip,deflate,sdch 
+HTTP_ACCEPT_LANGUAGE    fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4 
+HTTP_CONNECTION    keep-alive 
+HTTP_HOST    localhost 
+HTTP_REFERER    http://localhost/ 
+HTTP_USER_AGENT    Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17 
+HTTPS    - 
+REMOTE_ADDR    127.0.0.1 
+REMOTE_HOST    - 
+REMOTE_PORT    65037 
+REMOTE_USER    - 
+REDIRECT_REMOTE_USER    - 
+SCRIPT_FILENAME    E:/web/server_indices.php 
+SERVER_ADMIN    myemail@personal.us 
+SERVER_PORT    80 
+SERVER_SIGNATURE    
+PATH_TRANSLATED    - 
+SCRIPT_NAME    /server_indices.php 
+REQUEST_URI    /server_indices.php 
+PHP_AUTH_DIGEST    - 
+PHP_AUTH_USER    - 
+PHP_AUTH_PW    - 
+AUTH_TYPE    - 
+PATH_INFO    - 
+ORIG_PATH_INFO    - 
+</pre>
+	</li>
+	<li>
+		<a href="http://dev.mysql.com/doc/refman/5.7/en/group-by-functions.html#function_count">MySQL的count函数</a>：
+		<ul>
+			<li>count(*):　返回行数，无论是否为空（null）</li>
+			<li>count(列名):　返回非空的行数</li>
+			<li>count(distinct 列名): 不同列的行数、个数</li>
+		</ul>
+	</li>
+	<li>
+		如果用户输入的密码和机密数据将会需要保存在数据库中，请注意，如果不使用SSL(Secure Sockets Layer，加密套接字)，这些数据将以纯文本的方式从浏览器传递到数据库。
+	</li>
+	<li>
+	不要信任用户的输入，下面几个技巧可以防止屏蔽用户不安全的输入。
+		<ul>
+			<li>
+			addslashes(string $str)可以过滤数据，在单引号、双引号、反斜杠、Null前面再加上反斜杠，避免不便和威胁。最近在项目中在php中写JS代码有许多单引号，应该就用这个函数解决。然而，对于插入数据库的函数应该使用专用的过滤函数，详见<a href='http://php.net/manual/en/function.addslashes.php'>PHP手册</a>。
+			</br>另外用stripcslashes()可以还原。
+			</li>
+			<li>
+			当用户的输入将会被system()或exec()执行时，使用escapeshellcmd()过滤掉不安全的输入。
+			</li>
+			<li>
+			htmlspecialchars() 将特殊字符转化为html实体。比如将：&lt; 转化为<em>&.lt;</em>，而<em>&.lt;</em>在html语言中就代表&lt;，而实际编写html代码时，&lt;是一个标签的开始符号。这样就可以将任何标记转为无害的字符了。
+			</li>
+			<li>
+				strip_tags()去掉HTML和PHP的标记符号。比如，如果当用户输入有PHP代码，那么执行该函数即可阻止PHP代码的执行。但可能会使代码显示在屏幕上。 
+			</li>
+
+		</ul>
+	<li>
+	PHP的 
+	<a href="http://php.net/manual/en/book.curl.php">cURL </a>
+	函数库支持多种网络行为以及协议：http, https, ftp, gopher, telnet, dict, file, ldap。行为包括：HTTPS验证，HTTP POST、HTTP PUT、FTP上传、HTTP形式的上传、代理、cookie和用户密码验证。
+	</li>
+	<li>
+		strip_tags()去掉HTML和PHP的标记符号。比如，如果当用户输入有PHP代码，那么执行该函数即可阻止PHP代码的执行。但可能会使代码显示在屏幕上。 
+	</li>
+	<li>
+	<a href="http://php.net/manual/en/function.exit.php">exit()</a>
+	函数执行后脚本会停止，但停止会调用一系列函数。可以通过void register_shutdown_function ( callable $callback [, mixed $parameter [, mixed $... ]] )来注册关闭前执行的函数。如果exit()的参数是字符串，字符串将会显示在浏览器上；如果是函数，那么将只执行这一个函数。
+	</br>die()是exit()函数的重名。
+	</br>
+	<pre>
+	<code class="php">
+	$filename = '/path/to/data-file';
+	$file = fopen($filename, 'r')
+	    or exit("unable to open file ($filename)");
+	//这个用法看起来很屌。
+	</code></pre>
+	</li>
+	<li>
+	可以序列化一个类，但是在实例化之前必须知道其类的结构，主要通过包含类的定义文件。
+	</li>
+	<li>
+	通过ini_get()和ini_set()来暂时改变php.ini的参数，比如php脚本最长运行时间。
+	</li>
+</ol>
+（完）
+</body>
+</html>
