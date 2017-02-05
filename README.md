@@ -17,3 +17,8 @@
 * [【译】cs231n第二课：线性分类 - SVM与Softmax](machine_learning/translating-cs231n-syllabus-2.pdf) *2016-07-15*
 * [【译】cs231n第一课:图片分类、数据驱动模型，k近邻算法，训练集、验证集、测试集的划分](machine_learning/translating-cs231n-syllabus-1.pdf) *2016-07-13*
 
+
+# TODO list:
+* 迁移csdn的博客 *2017-02-05 10:14:19* ~ *?*
+* 整理那个500行以内代码的解释器的实现 *2017-02-05 10:14:19* ~ *?*
+
