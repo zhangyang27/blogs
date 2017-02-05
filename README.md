@@ -4,9 +4,9 @@
 * [用java实现简洁版的快速排序](program_language/java/java_quick_sort.md) *2017-02-03 11:05:29*
 * [读《松本行弘的程序世界》有感](book/matsumoto_yukihiro_code_no_sekai.md) *2017-02-03 10:05:29*
 * [代理模式](OOP/proxy_pattern.md) *2017-01-28 11:34:03*
-* [基金聚类](finance/fund_clustering.html) *2017-01-21 20:39:29*
-* [读《金融的解释（王福重）》有感](finance/the_explanation_of_finance.html) *2016-12-06 21:53:51*
-* [总结:PHP和MYSQL Web开发(第四版)](web/php_and_mysql_web_development_book.html) *2016-11-12 15:20:56*
+* [基金聚类](finance/fund_clustering.md) *2017-01-21 20:39:29*
+* [读《金融的解释（王福重）》有感](finance/the_explanation_of_finance.md) *2016-12-06 21:53:51*
+* [总结:PHP和MYSQL Web开发(第四版)](web/php_and_mysql_web_development_book.md) *2016-11-12 15:20:56*
 * [用SQL完成推荐：推荐相似用户喜爱的物品](database/similar-users-recommendation.md) *2016-11-05 20:34:10*
 * [【总结】第三章：探索（profiling）服务器表现(HP-MySQL 3rd)](database/HP-MySQL-chapter-3-translation.pdf) *2016-08-22 16:31:56*
 * [【总结】第二章：MySQL基准测试(HP-MySQL 3rd)](database/HP-MySQL-chapter-2-translation.pdf) *2016-08-16*
