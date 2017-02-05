@@ -64,7 +64,7 @@ ORIG_PATH_INFO    -
 	* strip_tags()去掉HTML和PHP的标记符号。比如，如果当用户输入有PHP代码，那么执行该函数即可阻止PHP代码的执行。但可能会使代码显示在屏幕上。
 *  PHP的 cURL 函数库支持多种网络行为以及协议：http, https, ftp, gopher, telnet, dict, file, ldap。行为包括：HTTPS验证，HTTP POST、HTTP PUT、FTP上传、HTTP形式的上传、代理、cookie和用户密码验证。
 *  exit() 函数执行后脚本会停止，但停止会调用一系列函数。
-	* 可以通过void register_shutdown_function ( callable $callback [, mixed 2.  $parameter [, mixed $... ]] )来注册关闭前执行的函数。	* 如果exit()的参数是字符串，字符串将会显示在浏览器上；
+	* 可以通过void register_shutdown_function ( callable $callback [, mixed 2.  $parameter [, mixed $... ]] )来注册关闭前执行的函数。	 * 如果exit()的参数是字符串，字符串将会显示在浏览器上；
 	* 如果是函数，那么将只执行这一个函数。 
 	* die()是exit()函数的重名。 	
 ```php
