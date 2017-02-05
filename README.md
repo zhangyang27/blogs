@@ -1,4 +1,4 @@
-# blogs
+#### blogs
 
 * [所有设计模式的要点](OOP/outline_of_design_pattern.md) *2017-02-04 16:44:37* 
 * [用java实现简洁版的快速排序](program_language/java/java_quick_sort.md) *2017-02-03 11:05:29*
@@ -18,7 +18,7 @@
 * [【译】cs231n第一课:图片分类、数据驱动模型，k近邻算法，训练集、验证集、测试集的划分](machine_learning/translating-cs231n-syllabus-1.pdf) *2016-07-13*
 
 
-# TODO list:
+#### TODO list:
 * 迁移csdn的博客 *2017-02-05 10:14:19* ~ *?*
 * 整理那个500行以内代码的解释器的实现 *2017-02-05 10:14:19* ~ *?*
 
