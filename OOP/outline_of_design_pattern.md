@@ -43,6 +43,16 @@
 * 优点：节约内存。
 * 缺点：使用系统复杂；需要准确区分对象的内部和外部状态。
 
+##### 代理
+* 定义：给某个对象提供一个代理，并由代理控制对该对象的访问。(Provide a surrogate or placeholder for another object to control access to it.)
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Proxy_pattern_diagram.svg/800px-Proxy_pattern_diagram.svg.png" width="50%" height="50%">
+* 场景：为了远程调用的代理、为了缓存的代理、为了保护（权限）的代理、为了额外的操作（比如计数器）的代理、为了创建耗时对象的代理（延迟初始化）。
+* 例子：代购、翻译、分布式系统的远程API调用、代理服务器、反向代理服务器
+* [code](java_design_pattern_code/src/proxy)
+* 优点：客户端针对抽象编程，方便更换代理；远程代理可以将耗费资源的操作移到性能更好的服务器上，提高整体效率；
+* 缺点：有了代理速度变慢；代理类的实现可能异常复杂：比如远程代理。
+* 与装饰模式的区别：代理模式增加全新的功能、装饰模式增加相关功能；代理模式还控制了对代理对象的访问，而装饰只是对对象加功能。
+
 #### 行为型模式
 * 关注对象之间的交互、通信、协作，明确对象的职责。
 * （我现在看来好深奥 2017-02-04 17:49:07 ）
