@@ -38,7 +38,7 @@
 * 定义：运用共享技术有效地支持大量细粒度对象的复用。
 * 图：<img src="https://github.com/zhangyang27/blogs/raw/master/images/flyweight_pattern.png" width="50%" height="50%">
 * 场景：系统需要大量使用相同或相似对象时，利用享元模式可以实现对象的多次复用。将变化的部分作为外部状态，不变的部分作为内部状态。以字符串为例，每个字符的内容是不变的，但是字符的位置是变化的。
-* 例子：[java.lang.Integer.valueOf]("http://stackoverflow.com/questions/6521067/why-is-java-lang-integer-valueof-a-flyweight-pattern")；实际上我觉得享元模式大量使用，比如字符串(符合定义中的细粒度)、线程池、数据库连接池，都有享元的思想。
+* 例子：[java.lang.Integer.valueOf](http://stackoverflow.com/questions/6521067/why-is-java-lang-integer-valueof-a-flyweight-pattern)；实际上我觉得享元模式大量使用，比如字符串(符合定义中的细粒度)、线程池、数据库连接池，都有享元的思想。
 * [code](java_design_pattern_code/src/flyweight)
 * 优点：节约内存。
 * 缺点：使用系统复杂；需要准确区分对象的内部和外部状态。
