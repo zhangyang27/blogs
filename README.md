@@ -1,6 +1,6 @@
 #### blogs
 
-* [python参数的传递](program_language/python/pass_arguments.md) *2017-02-07 10:25:30*
+* [python参数的传递](program_language/python/pass_arguments.md) *2017-02-08 11:15:00*
 * [python简洁的代价 —— python的劣势](program_language/python/disadvantage.md) *2017-02-07 10:25:30*
 * [【改编】某些python相关的难点](program_language/python/python_interview.md) *2017-02-06 17:40:32* 
 * [所有设计模式的要点](OOP/outline_of_design_pattern.md) *2017-02-04 16:44:37* 
@@ -9,7 +9,7 @@
 * [代理模式](OOP/proxy_pattern.md) *2017-01-28 11:34:03*
 * [基金聚类](finance/fund_clustering.md) *2017-01-21 20:39:29*
 * [读《金融的解释（王福重）》有感](finance/the_explanation_of_finance.md) *2016-12-06 21:53:51*
-* [总结:PHP和MYSQL Web开发(第四版)](web/php_and_mysql_web_development_book.md) *2016-11-12 15:20:56*
+* [【总结】PHP和MYSQL Web开发(第四版)](web/php_and_mysql_web_development_book.md) *2016-11-12 15:20:56*
 * [用SQL完成推荐：推荐相似用户喜爱的物品](database/similar-users-recommendation.md) *2016-11-05 20:34:10*
 * [【总结】第三章：探索（profiling）服务器表现(HP-MySQL 3rd)](database/HP-MySQL-chapter-3-translation.pdf) *2016-08-22 16:31:56*
 * [【总结】第二章：MySQL基准测试(HP-MySQL 3rd)](database/HP-MySQL-chapter-2-translation.pdf) *2016-08-16*
