@@ -1,5 +1,6 @@
 #### blogs
 
+* [python参数的传递](program_language/python/pass_arguments.md) *2017-02-07 10:25:30*
 * [python简洁的代价 —— python的劣势](program_language/python/disadvantage.md) *2017-02-07 10:25:30*
 * [【改编】某些python相关的难点](program_language/python/python_interview.md) *2017-02-06 17:40:32* 
 * [所有设计模式的要点](OOP/outline_of_design_pattern.md) *2017-02-04 16:44:37* 
