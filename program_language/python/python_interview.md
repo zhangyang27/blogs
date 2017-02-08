@@ -15,10 +15,13 @@
 Python其实有3个方法,即静态方法(staticmethod),类方法(classmethod)和实例方法,如下:
 
 ```python
+#一般的函数
 def foo(x):
     print "executing foo(%s)"%(x)
 
 class A(object):
+
+	#实例方法
     def foo(self,x):
         print "executing foo(%s,%s)"%(self,x)
 
@@ -32,18 +35,55 @@ class A(object):
 
 a=A()
 
+a.foo(1)
+# executing foo(<__main__.A object at 0xb7dbef0c>,1)
+
+a.class_foo(1)
+# executing class_foo(<class '__main__.A'>,1)
+
+A.class_foo(1)
+# executing class_foo(<class '__main__.A'>,1)
+
+a.static_foo(1)
+# executing static_foo(1)
+
+A.static_foo('hi')
+# executing static_foo(hi)
+
+#打印可见这个方法是与实例绑定的(bound这个词恐怕要自己多揣摩了)
+print(a.foo)
+# <bound method A.foo of <__main__.A object at 0xb7d52f0c>>
+
+#与类绑定
+print(a.class_foo)
+# <bound method type.class_foo of <class '__main__.A'>>
+
+print(a.static_foo)
+# <function static_foo at 0xb7d479cc>
+
+print(A.static_foo)
+# <function static_foo at 0xb7d479cc>
+
 ```
 
-这里先理解下函数参数里面的self和cls.这个self和cls是对类或者实例的绑定,对于一般的函数来说我们可以这么调用`foo(x)`,这个函数就是最常用的,它的工作跟任何东西(类,实例)无关.对于实例方法,我们知道在类里每次定义方法的时候都需要绑定这个实例,就是`foo(self, x)`,为什么要这么做呢?因为实例方法的调用离不开实例,我们需要把实例自己传给函数,调用的时候是这样的`a.foo(x)`(其实是`foo(a, x)`).类方法一样,只不过它传递的是类而不是实例,`A.class_foo(x)`.注意这里的self和cls可以替换别的参数,但是python的约定是这俩,还是不要改的好.
+这里先理解下函数参数里面的self和cls.这个self和cls是对类或者实例的绑定.
 
-对于静态方法其实和普通的方法一样,不需要对谁进行绑定,唯一的区别是调用的时候需要使用`a.static_foo(x)`或者`A.static_foo(x)`来调用.
+对于一般的函数来说我们可以这么调用`foo(x)`,这个函数就是最常用的,它的工作跟任何东西(类,实例)无关.
+
+对于实例方法,我们知道在类里每次定义方法的时候都需要绑定这个实例,就是`foo(self, x)`,为什么要这么做呢?因为实例方法的调用离不开实例,我们需要把实例自己传给函数,调用的时候是这样的`a.foo(x)`(其实是`foo(a, x)`).
+
+类方法一样,只不过它传递的是类而不是实例,`A.class_foo(x)`，但是也可以用`a.class_foo(x)`来调用
+
+注意这里的self和cls可以替换别的参数,但是python的约定是这俩,还是不要改的好.
+
+对于静态方法其实和普通的方法一样，不需要对谁进行绑定，也不需要在第一个参数里显示注明self/cls，唯一的区别是调用的时候需要使用`a.static_foo(x)`或者`A.static_foo(x)`来调用.
 
 |\\|实例方法|类方法|静态方法|
 |:--|:--|:--|:--|
 |a = A()|a.foo(x)|a.class_foo(x)|a.static_foo(x)|
 |A|不可用|A.class_foo(x)|A.static_foo(x)|
 
-更多关于这个问题:http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python
+更多请参考[stackoverflow](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
 
 ## 4 类变量和实例变量
 
@@ -61,9 +101,9 @@ print Person.name  # aaa
 
 类变量就是供类使用的变量,实例变量就是供实例使用的.
 
-这里`p1.name="bbb"`是实例调用了类变量,这其实和上面第一个问题一样,就是函数传参的问题,`p1.name`一开始是指向的类变量`name="aaa"`,但是在实例的作用域里把类变量的引用改变了,就变成了一个实例变量,self.name不再引用Person的类变量name了.
+这里`p1.name="bbb"`是实例调用了类变量,这其实和上面第一个问题一样,,`p1.name`一开始是指向的类变量`name="aaa"`,但是在实例的作用域里把类变量的引用改变了,就变成了一个实例变量,self.name不再引用Person的类变量name了.
 
-可以看看下面的例子:
+和[函数传参](pass_arguments.md)的问题类似,可以看看下面的例子:
 
 ```python
 class Person:
@@ -75,9 +115,12 @@ p1.name.append(1)
 print p1.name  # [1]
 print p2.name  # [1]
 print Person.name  # [1]
-```
 
-参考:http://stackoverflow.com/questions/6470428/catch-multiple-exceptions-in-one-line-except-block
+p1.name = ['new', 'list']
+print p1.name  # ['new', 'list']
+print p2.name  # [1]
+print Person.name  # [1]
+```
 
 ## 5 Python自省
 
@@ -113,11 +156,22 @@ AttributeError: myClass instance has no attribute '__superprivate'
 
 `__foo__`:一种约定,Python内部的名字,用来区别其他用户自定义的命名,以防冲突.有这么一类方法叫做[魔术方法](http://pycoders-weekly-chinese.readthedocs.io/en/latest/issue6/a-guide-to-pythons-magic-methods.html)
 
-`_foo`:一种约定,用来指明变量私有.程序员用来指定私有变量的一种方式.
+`_foo`:一种约定,用来指明变量私有.程序员用来指定私有变量的一种方式.但是宣称是私有的，python还是(有办法)[http://blog.csdn.net/lxgwm2008/article/details/9253945]可以调用，见下面的例子。
 
 `__foo`:这个有真正的意义:解析器用`_classname__foo`来代替这个名字,以区别和其他类相同的命名，防止冲突。
 
-详情见[stackover](http://stackoverflow.com/questions/1301346/the-meaning-of-a-single-and-a-double-underscore-before-an-object-name-in-python)或者[知乎](http://www.zhihu.com/question/19754941)
+详情见[stackoverflow](http://stackoverflow.com/questions/1301346/the-meaning-of-a-single-and-a-double-underscore-before-an-object-name-in-python)或者[知乎](http://www.zhihu.com/question/19754941)
+
+如何调用python的私有方法：
+```python
+class myClass():
+    def __private_method(self,str):
+        print str
+
+a = myClass();
+a.__private_method("123") #返回：AttributeError: myClass instance has no attribute '__private_method'
+a._myClass__private_method("123") #返回123，成功调用python的私有方法
+```
 
 ## 8 字符串格式化:%和.format
 
@@ -499,7 +553,7 @@ Python GC主要使用引用计数（reference counting）来跟踪和回收垃�
 
 ### 1 引用计数
 
-PyObject是每个对象必有的内容，其中`ob_refcnt`就是做为引用计数。当一个对象有新的引用时，它的`ob_refcnt`就会增加，当引用它的对象被删除，它的`ob_refcnt`就会减少.引用计数为0时，该对象生命就结束了。
+PyObject( 是C代码里的结构体 )是每个对象必有的内容，其中`ob_refcnt`就是做为引用计数。当一个对象有新的引用时，它的`ob_refcnt`就会增加，当引用它的对象被删除，它的`ob_refcnt`就会减少.引用计数为0时，该对象生命就结束了。
 
 优点:
 
@@ -524,9 +578,9 @@ Python默认定义了三代对象集合，索引数越大，对象存活时间�
 举例：
 当某些内存块M经过了3次垃圾收集的清洗之后还存活时，我们就将内存块M划到一个集合A中去，而新分配的内存都划分到集合B中去。当垃圾收集开始工作时，大多数情况都只对集合B进行垃圾回收，而对集合A进行垃圾回收要隔相当长一段时间后才进行，这就使得垃圾收集机制需要处理的内存少了，效率自然就提高了。在这个过程中，集合B中的某些内存块由于存活时间长而会被转移到集合A中，当然，集合A中实际上也存在一些垃圾，这些垃圾的回收会因为这种分代的机制而被延迟。
 
-## 25 Python的List
+## 25 Python的List是如何实现的
 
-推荐: http://www.jianshu.com/p/J4U6rR
+参考(http://www.jianshu.com/p/J4U6rR)
 
 ## 26 Python的is
 
@@ -583,6 +637,8 @@ xrange is a sequence object that evaluates lazily (惰性求值，即需要一�
 poll改善了第一个缺点
 
 epoll改了三个缺点.
+
+epoll还采用了基于事件的就绪通知方式。在select/poll中，进程只有在调用一定方法后，内核才对所有监视文件符进行扫描，而epoll事先通过epoll_ctl()来注册每一个文件描述符，一旦某个文件描述符就绪时，内核会采用类似callback的回调机制，激活这个文件描述符，当进程调用epoll_wait()时便得到通知。
 
 关于epoll的: http://www.cnblogs.com/my_life/articles/3968782.html
 
