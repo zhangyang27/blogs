@@ -81,7 +81,7 @@
 
 ##### 策略
 * 定义：定义一系列算法类，将每个算法封装起来，并让他们可以互相替换。策略模式让算法独立于使用它的客户而变化。
-* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="80%" height="80%">
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="50%" height="50%">
 * 场景：当系统需要动态地在几个算法里选择一种执行；不希望客户端知道复杂的、与算法相关的数据结构，可以在策略类里封装数据结构和算法。
 * 例子：电影票根据用户的不同打折方式；Java SE的容器布局管理；
 * [code](java_design_pattern_code/src/strategy)
