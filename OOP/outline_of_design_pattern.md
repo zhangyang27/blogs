@@ -72,7 +72,7 @@
 * 场景：请求发送者和接收者解耦；请求发送者和请求（命令）可以用不同的生命周期，发送者不在了，命令依然存在；需要请求（命令）队列要调用多个接收者；系统需要支持（请求）命令的撤销或者恢复，在网站部署、数据库备份方面我觉得很有意义；需要与组合模式一起形成命令的树形结构（称为宏命令）
 * 例子：开关连着电线，电线连着电灯，电线也可以连着排气扇；电线就是命令，换电器只需要换线即可；不同的按钮有着不同的功能，按钮的功能可以随意切换，就是因为将按钮的请求单独封装成了对象，从而使用了对象模式。
 
-	<img src="https://github.com/zhangyang27/blogs/raw/master/images/command_pattern.png" width="50%" height="50%">
+	<img src="https://github.com/zhangyang27/blogs/raw/master/images/command_pattern.png" width="20%" height="20%">
 
 * [code](java_design_pattern_code/src/command_pattern)
 * 优点：降低系统耦合度；容易增加新的命令；方便设计命令队列和宏命令（组合命令）；为命令的撤销和恢复提供了一种实现方案。
