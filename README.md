@@ -1,5 +1,6 @@
 #### blogs
 
+* [三读《影响力》](others/influence.md) *2017-02-11 11:08:41*
 * [python参数的传递](program_language/python/pass_arguments.md) *2017-02-08 11:15:00*
 * [python简洁的代价 —— python的劣势](program_language/python/disadvantage.md) *2017-02-07 10:25:30*
 * [【改编】某些python相关的难点](program_language/python/python_interview.md) *2017-02-06 17:40:32* 
@@ -22,6 +23,7 @@
 
 
 #### TODO list:
-* 迁移[csdn的博客](http://blog.csdn.net/zy825316) *2017-02-05 10:14:19* ~ *?*
-* 整理那个500行以内代码的解释器的实现 *2017-02-05 10:14:19* ~ *?*
+* 迁移[csdn的博客](http://blog.csdn.net/zy825316) *2017-02-05 10:14:19*
+* 整理那个500行以内代码的解释器的实现 *2017-02-05 10:14:19*
+* 再读《沟通的艺术》并总结 *2017-02-11 11:21:19*
 
