@@ -1,8 +1,1 @@
-/flyweight/
-/proxy.class
-/proxy/
-/chain/
-/command.class
-/command/
-/strategy/
-/template_method/
+/visitor/
