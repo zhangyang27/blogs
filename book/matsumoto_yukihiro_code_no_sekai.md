@@ -22,13 +22,13 @@
 	书中说：多态就是把不同种类的东西当成相同的东西来处理。而我读了后面的代码，理解为一个东西可以有多种形态，但每个形态对于同一个消息的反应不同。比如箱子，箱子都可以打开（打开被认为是一种消息），不同的箱子打开的方式不同（用钥匙打开、礼品箱要撕开了包装带打开）。如果将普通箱子作为父类，并且留有一个未实现方法open()，子类继承普通箱子后，会实现自己的open()方法。这就是多态的一种体现。
 	看代码：
 
-<img src="https://github.com/zhangyang27/blogs/raw/master/images/polymorphism_1_sjflsajfdlafjj.png">
+	<img src="https://github.com/zhangyang27/blogs/raw/master/images/polymorphism_1_sjflsajfdlafjj.png">
 
-<img src="https://github.com/zhangyang27/blogs/raw/master/images/polymorphism_2_lsadjflasjdflasjfl.png">
+	<img src="https://github.com/zhangyang27/blogs/raw/master/images/polymorphism_2_lsadjflasjdflasjfl.png">
 
-图2-2中，利用参数的不同做不同的处理。可以看出当需要增加箱子种类时，必须修改代码，修改越多，越容易出错。
+	图2-2中，利用参数的不同做不同的处理。可以看出当需要增加箱子种类时，必须修改代码，修改越多，越容易出错。
 
-而为了体现：根据对象的不同类型而进行适当的处理。就改为了图2-4、2-5的代码。可以看到定义了不同类型的三个箱子，都有打开的方法，各自有各自的处理。
+	而为了体现：根据对象的不同类型而进行适当的处理。就改为了图2-4、2-5的代码。可以看到定义了不同类型的三个箱子，都有打开的方法，各自有各自的处理。
 
-好处体现在：根据对象的不同自动选择最合适的方法，不易出错，不像图2-3中的一堆if else的判断。还能方便的追加新箱子。
+	好处体现在：根据对象的不同自动选择最合适的方法，不易出错，不像图2-3中的一堆if else的判断。还能方便的追加新箱子。
 
