@@ -38,7 +38,7 @@
 
 1. 分而治之，一个一个红包之间无关联。所以对每一个红包设置一个ID，按规则(取模)将此红包分配给一套处理系统处理（包含server和DB）。
 
-   img src="http://mmbiz.qpic.cn/mmbiz_png/YriaiaJPb26VMyvfdIg148h2Jw2T9b9hNtIV3qQyzhib5bmQVvEpuY07wpxSD850F0X05KvYwGjiaXTGr9Uo5gUr9Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1" width="50%" height="50%">
+   <img src="http://mmbiz.qpic.cn/mmbiz_png/YriaiaJPb26VMyvfdIg148h2Jw2T9b9hNtIV3qQyzhib5bmQVvEpuY07wpxSD850F0X05KvYwGjiaXTGr9Uo5gUr9Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1" width="50%" height="50%">
 
 1. server进行排队控制，解决DB内部的抢锁问题。每一个红包都有一个队列（根据ID可建立），再将拆红包的动作装进自己红包ID的队列，队列按先进先出的规则，串行的操控数据库。
 
