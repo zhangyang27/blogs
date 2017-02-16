@@ -81,12 +81,12 @@
 
 ##### 迭代器
 * 定义：提供一种方法来访问数据聚合对象，而不用暴露这个对象的内部表示（我认为是属性），别名为游标。
-* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="50%" height="50%">
-* 场景：
-* 例子：电视机是一个频道容器，遥控器实现了对电视机内频道的遍历。
-* [code](java_design_pattern_code/src/strategy)
-* 优点：选择算法和新增算法时的灵活；提供了管理算法的办法（比如确保了每个算法的输入输出格式类似、便于验证等）；方便复用算法（算法单独封装在了类里）；
-* 缺点：只适用于客户端知道该使用哪个算法时；类会变多；不支持一个策略类完成某些功能再交个另一个策略类处理。
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Iterator_UML_class_diagram.svg" width="50%" height="50%">
+* 场景：访问聚合对象的内容时无需暴露它的内部实现，客户端不需要知道内部实现细节；当需要为一个聚合对象提供多种遍历方式时可以采用迭代器模式；可以为不同的聚合结构提供一个统一的访问接口，但是接口的实现类可以按需提供不同的遍历方式。
+* 例子：电视机是一个频道容器，遥控器实现了对电视机内频道的遍历。java的List和Set都实现了Collection接口，而Collection接口又实现了Iterable接口，所以实现了Collection接口的都实现了迭代器。
+* [code](java_design_pattern_code/src/iterator)
+* 优点：支持以不同的方式遍历对象，需要新的遍历方式时只需添加一个迭代器的实现类。简化了聚合类。引入了抽象层，增加聚合类和迭代器类逗非常方便。
+* 缺点：存储数据和遍历数据的职责分离，类的个数成对增加。抽象类的设计难度大，就像刚开始Iterator没有考虑到逆向遍历。
 
 
 ##### 策略
