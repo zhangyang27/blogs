@@ -79,6 +79,16 @@
 * 缺点：类多，每一个命令都需要一个类，导致系统变得复杂。
 
 
+##### 迭代器
+* 定义：提供一种方法来访问数据聚合对象，而不用暴露这个对象的内部表示（我认为是属性），别名为游标。
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="50%" height="50%">
+* 场景：
+* 例子：电视机是一个频道容器，遥控器实现了对电视机内频道的遍历。
+* [code](java_design_pattern_code/src/strategy)
+* 优点：选择算法和新增算法时的灵活；提供了管理算法的办法（比如确保了每个算法的输入输出格式类似、便于验证等）；方便复用算法（算法单独封装在了类里）；
+* 缺点：只适用于客户端知道该使用哪个算法时；类会变多；不支持一个策略类完成某些功能再交个另一个策略类处理。
+
+
 ##### 策略
 * 定义：定义一系列算法类，将每个算法封装起来，并让他们可以互相替换。策略模式让算法独立于使用它的客户而变化。
 * 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="50%" height="50%">
