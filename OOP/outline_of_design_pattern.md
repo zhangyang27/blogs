@@ -113,6 +113,16 @@
 * 难点：如何实现多次撤销？如果在多次撤销过程中发生了分支该如何处理？
 
 ##### 策略
+* 定义：定义对象之间的一种一对多依赖关系，使得每当一个对象状态发生变化时，其相关依赖对象皆能得到通知并自动更新。观察者模式的别名有发布-订阅 (Publish/Subscribe)模式、模型-视图(Model/View)模式，源-监听(Source/Listener)模式或从属者(Dependents)模式。
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Observer.svg/854px-Observer.svg.png" width="50%" height="50%">
+* 场景：一个对象的状态行为发生变化将导致其它对象的状态或者行为发生变化；需要触发链时，A对象的行为影响了B对象，B对象的行为影响了C对象时，也可以用观察者模式来创建。
+* 例子：红灯停，绿灯走中，信号灯是观察目标，汽车是观察者。MVC架构应用了观察者模式；[java.util.Observer](http://docs.oracle.com/javase/8/docs/api/java/util/Observer.html);[java.util.EventListener](http://docs.oracle.com/javase/8/docs/api/java/util/EventListener.html);[javax.servlet.http.HttpSessionBindingListener](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSessionBindingListener.html)
+* [code](java_design_pattern_code/src/Observer)
+* 优点：表示层和数据层的分离，定义了稳定的消息更新机制；观察者模式支持广播通信，观察目标会向所有已经注册的观察者发送通知；符合开闭原则，增加新的观察者无需要修改原有系统代码。
+* 缺点：如果一个观察目标的观察者太多，通知所有观察者将花费不少时间。如果观察者和观察目标之间有循环依赖，那么会造成死循环。
+* 要点：JDK有Observable类和Observer接口对观察者模式提供了支持。
+
+##### 策略
 * 定义：定义一系列算法类，将每个算法封装起来，并让他们可以互相替换。策略模式让算法独立于使用它的客户而变化。
 * 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="50%" height="50%">
 * 场景：当系统需要动态地在几个算法里选择一种执行；不希望客户端知道复杂的、与算法相关的数据结构，可以在策略类里封装数据结构和算法。
