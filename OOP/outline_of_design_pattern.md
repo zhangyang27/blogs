@@ -107,7 +107,7 @@
 * 场景：当业务需要倒退(撤销)到某一个历史状态时，如下图，使用此模式。防止外界对象破坏对一个对象的历史状态的封装性。
 * 图：<img src="https://github.com/zhangyang27/blogs/raw/master/images/memento_pattern_saf.png" width="50%" height="50%">
 * 例子：棋类的悔棋。[java.util.Date](http://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-* [code](java_design_pattern_code/src/memento)
+* [code](java_design_pattern_code/src/Memento)
 * 优点：提供了一种状态恢复的实现机制；备忘录实现了对信息的封装，一个备忘录对象是一种原发器对象状态的表示，不会被其它代码改动。 
 * 缺点：耗费资源，如果原发器类的成员变量太多，多次保存就需要占用大量内存。
 * 难点：如何实现多次撤销？如果在多次撤销过程中发生了分支该如何处理？
