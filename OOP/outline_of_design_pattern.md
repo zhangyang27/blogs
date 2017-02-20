@@ -85,19 +85,19 @@
 * 场景：访问聚合对象的内容时无需暴露它的内部实现，客户端不需要知道内部实现细节；当需要为一个聚合对象提供多种遍历方式时可以采用迭代器模式；可以为不同的聚合结构提供一个统一的访问接口，但是接口的实现类可以按需提供不同的遍历方式。
 * 例子：电视机是一个频道容器，遥控器实现了对电视机内频道的遍历。java的List和Set都实现了Collection接口，而Collection接口又实现了Iterable接口，所以实现了Collection接口的都实现了迭代器。
 * [code](java_design_pattern_code/src/iterator)
-* 优点：支持以不同的方式遍历对象，需要新的遍历方式时只需添加一个迭代器的实现类。简化了聚合类。引入了抽象层，增加聚合类和迭代器类逗非常方便。
+* 优点：支持以不同的方式遍历对象，需要新的遍历方式时只需添加一个迭代器的实现类。简化了聚合类。引入了抽象层，增加聚合类和迭代器类都非常方便。
 * 缺点：存储数据和遍历数据的职责分离，类的个数成对增加。抽象类的设计难度大，就像刚开始Iterator没有考虑到逆向遍历。
 
 #### 中介者
 * 定义：用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。又称调停者模式。
 * 图：<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Mediator_design_pattern.png" width="50%" height="50%">
-* 场景： 对象之间的引用关系复杂；一个对象由于引用了其它多个对象并直接通信，导致难以复用；
+* 场景： 对象之间的引用关系复杂；一个对象由于引用了其它多个对象并直接通信，导致难以复用时可以使用中介者模式；
 * 图：<img src="https://github.com/zhangyang27/blogs/raw/master/images/mediator_pattern1_asldjf.png" width="50%" height="50%">
 * 例子：QQ群，群作为一个中介者，传递了一个用户对其它所有用户说的话，而不需要用户逐一告诉每个用户。在GUI控件库中比较多，比如点了这按钮，另一个列表也会变的情况。All scheduleXXX() methods of [java.util.Timer](http://docs.oracle.com/javase/8/docs/api/java/util/Timer.html)；[java.util.concurrent.Executor#execute()](http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html#execute-java.lang.Runnable-)；submit() and invokeXXX() methods of [java.util.concurrent.ExecutorService](http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html); scheduleXXX() methods of [java.util.concurrent.ScheduledExecutorService](http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html); [java.lang.reflect.Method#invoke()](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Method.html#invoke-java.lang.Object-java.lang.Object...-) 
 * [code](java_design_pattern_code/src/mediator)
 * 优点：简化了对象间的交互，使得对象之间的关系更易理解，将同事间多对多的关系转化为了一对的关系（星型结构）。增加新的中介者（新的交互方式）和新的同事都非常方便；使得同事类可以重用。
 * 缺点：中介者类中包含大量同事交互细节，导致具体中介者类非常复杂，难以维护。
-* 点评：怎么我感觉就是挪了一下代码的位置了，本来要写在每一个同事类里的代码，都转移到中介类里了，还有就是免去了同事类之间的引用。
+* 点评：怎么我感觉就是挪了一下代码的位置了，本来要写在每一个同事类里的代码，都转移到中介类里了，但确实是免去了同事类之间的引用。
 
 #### 备忘录
 * 定义：在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。
@@ -164,3 +164,4 @@
 #### 参考
 1. 设计模式的艺术软件开发人员内功修炼之道_刘伟
 2. wikipedia
+1. github开源项目：[java-design-patterns](https://github.com/iluwatar/java-design-patterns)
