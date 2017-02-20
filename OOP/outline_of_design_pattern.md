@@ -112,7 +112,7 @@
 * 缺点：耗费资源，如果原发器类的成员变量太多，多次保存就需要占用大量内存。
 * 难点：如何实现多次撤销？如果在多次撤销过程中发生了分支该如何处理？
 
-##### 观察
+##### 观察者
 * 定义：定义对象之间的一种一对多依赖关系，使得每当一个对象状态发生变化时，其相关依赖对象皆能得到通知并自动更新。观察者模式的别名有发布-订阅 (Publish/Subscribe)模式、模型-视图(Model/View)模式，源-监听(Source/Listener)模式或从属者(Dependents)模式。
 * 图：<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Observer.svg/854px-Observer.svg.png" width="50%" height="50%">
 * 场景：一个对象的状态行为发生变化将导致其它对象的状态或者行为发生变化；需要触发链时，A对象的行为影响了B对象，B对象的行为影响了C对象时，也可以用观察者模式来创建。
