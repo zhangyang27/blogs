@@ -99,6 +99,19 @@
 * 缺点：中介者类中包含大量同事交互细节，导致具体中介者类非常复杂，难以维护。
 * 点评：怎么我感觉就是挪了一下代码的位置了，本来要写在每一个同事类里的代码，都转移到中介类里了，还有就是免去了同事类之间的引用。
 
+##### 备忘录
+* 定义：在不破坏封装的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态，这样可以在以后将对象恢复到原先保存的状态。
+* UML图：
+	* Originator类其内部状态需要被储存或者利用备忘录储存的状态恢复；Memento类是Originator的备份模板（里面的属性将参考Originator类，可能是所有属性、也可能是部分属性），生成一个对象表示一次备份；Caretaker用于保存备忘录。
+	* <img src="https://github.com/zhangyang27/blogs/raw/master/images/memento_pattern_gjj.png" width="50%" height="50%">
+* 场景：当业务需要倒退(撤销)到某一个历史状态时，如下图，使用此模式。防止外界对象破坏对一个对象的历史状态的封装性。
+* 图：<img src="https://github.com/zhangyang27/blogs/raw/master/images/memento_pattern_saf.png" width="50%" height="50%">
+* 例子：棋类的悔棋。[java.util.Date](http://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+* [code](java_design_pattern_code/src/memento)
+* 优点：提供了一种状态恢复的实现机制；备忘录实现了对信息的封装，一个备忘录对象是一种原发器对象状态的表示，不会被其它代码改动。 
+* 缺点：耗费资源，如果原发器类的成员变量太多，多次保存就需要占用大量内存。
+* 难点：如何实现多次撤销？如果在多次撤销过程中发生了分支该如何处理？
+
 ##### 策略
 * 定义：定义一系列算法类，将每个算法封装起来，并让他们可以互相替换。策略模式让算法独立于使用它的客户而变化。
 * 图：<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png" width="50%" height="50%">
