@@ -124,7 +124,7 @@
 
 #### 状态
 * 定义：允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。
-* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/State_Design_Pattern_UML_Class_Diagram.svg/470px-State_Design_Pattern_UML_Class_Daiagram.svg.png" width="50%" height="50%">
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/State_Design_Pattern_UML_Class_Diagram.svg" width="50%" height="50%">
 	* 注意环境类（context）拥有状态对象，状态的切换有可能在环境类里发生，也有可能在具体状态类的业务代码中判断环境类的属性来切换状态。
 	* 理解环境类的存在，可以用一个例子：一个银行帐号有多个状态（透支、正常），银行帐号就是环境类，而不同的状态会形成状态类，银行帐号拥有状态类，银行帐号拥有属性余额，状态类会在业务代码里根据余额来切换状态。
 * 场景：当系统中某个对象存在多个状态，这些状态可以相互转换，并且对象在不同状态下行为不相同时可以使用状态模式。对象的行为依赖它的状态（比如某个属性），状态的改变将导致行为的改变；当代码中包含大量与对象状态有关的条件语句时，导致代码可维护性差，不能方便的增加或者删除，可以考虑状态模式。
