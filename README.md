@@ -1,5 +1,6 @@
 #### blogs
 
+* [毒药模式](OOP/iluwatar-java-design-patterns/src/poison/pill/) *2017-02-21 23:51:34*
 * [读《微信红包高并发系统设计方案》](others/the_system_desigh_of_wechat_red_packet.md) *2017-02-11 11:08:41*
 * [python参数的传递](program_language/python/pass_arguments.md) *2017-02-08 11:15:00*
 * [python简洁的代价 —— python的劣势](program_language/python/disadvantage.md) *2017-02-07 10:25:30*
