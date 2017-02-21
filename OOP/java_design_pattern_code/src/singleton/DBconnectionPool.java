@@ -1,7 +1,8 @@
 package singleton;
 import java.util.*;
 /*
- * 负责数据库连接，是一个单例
+ * 创建一个数据库连接池，它应该是一个单例
+ * 他能够拥有指定个数的连接对象，并且在查询时随机从池子中挑选连接对象发起连接。
  */
 public class DBconnectionPool {
 	private List<String> connecionList = null;
