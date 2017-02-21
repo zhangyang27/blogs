@@ -13,7 +13,7 @@
 	* Java可以使用IoDH(Initialization on Demand Holder)技术，也就是使用静态内部类完成单例类的创建，即能延迟创建、又能保证线程安全。
 * 图：<img src="https://github.com/zhangyang27/blogs/raw/master/images/singleton_uml_gjj.png" width="50%" height="50%">
 * 场景：系统只需要一个实例对象（比如序列号生成器、资源管理器或者资源太大而只能有一个对象）
-* 例子：Windows任务管理器；负载均衡器；数据库连接池；
+* 例子：Windows任务管理器；负载均衡器；数据库连接池；[java.lang.Runtime#getRuntime()](http://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#getRuntime%28%29); [java.awt.Desktop#getDesktop()](http://docs.oracle.com/javase/8/docs/api/java/awt/Desktop.html#getDesktop--); [java.lang.System#getSecurityManager()](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#getSecurityManager--)
 * [code](java_design_pattern_code/src/singleton)
 * 优点：因为内存中只有一个对象，节约了资源，提高了性能；可以依据需求创建可变数目的实例（多例类）；
 * 缺点：没有抽象层，扩展困难；单例类责任过重，又负责创建，又负责提供业务方法；面向对象的语言都提供了垃圾回收技术，如果唯一实例长期不被使用而又被回收了的话，下次调用又将重新实例化，但之前单例对象的状态会丢失。
