@@ -86,13 +86,14 @@
 	* `expression ::= value | operation`
 	* `operation ::= expression '+' expression | expression '-' expression`
 	* `value ::= an integer`
-* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Interpreter_UML_class_diagram.svg" width="50%" height="50%">
-	* TerminalExpression实现了对文法中终结符相关的解释，NonterminalExpression实现了对非终结表达符的解释，其可能再包含非终结表达符，所以一般由递归完成。Context环境类保存一些额外的全局信息和公共方法。
+* UML图	
+	* <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Interpreter_UML_class_diagram.svg" width="50%" height="50%">
+	* TerminalExpression实现了对文法中终结符的解释；NonterminalExpression实现了对非终结表达符的解释，其可能再包含非终结表达符，所以一般由递归完成。Context环境类保存一些额外的全局信息和公共方法。
 	* 每一个终结符或者非终结符都会有一个类与之对应。
 * 场景：某些情况下，为了能够更好的描述某些特定(重复)的问题，可以创建一种新的语言，这些语言拥有自己的表达式和结构，即文法规则，这些问题的实例将对应为语言的句子，这里可以用解释器模型来设计新的语言。但注意文法规则不能太复杂，并且对执行效率要求不高。
-* 例子：解释字符串"1+3+1-4"，注意这是字符串，如果作为数值表达式的话，编程语言可以直接识别，如果编程语言是面向对象的，那么我们可以利用解释器模式写一套规则来解释"1+3+1-4"，完成计算。正则表达式、XML文档解释领域。
+* 例子：正则表达式；XML文档解释领域；SQL语句；对于解释字符串"1+3+1-4"（注意这是字符串，如果作为数值表达式的话，编程语言可以直接识别)，如果编程语言是面向对象的，那么我们可以利用解释器模式写一套规则来解释"1+3+1-4"，完成计算。
 * [code](java_design_pattern_code/src/Interpreter)
-* 优点：因为每个文法规则都用单独的一个类来表示，易于改变和扩展文法，比如增加新的解释表达式。我觉得也将解释器的问题描述的特别清楚，代码怎么写，写在哪都有章可循。
+* 优点：因为每个文法规则都用单独的一个类来表示，易于改变和扩展文法，比如增加新的解释表达式。我觉得这个模式将解释器的问题描述的特别清楚，代码怎么写，写在哪都有章可循。
 * 缺点：文法复杂的情况下，规则多，类就多，难以管理和维护。因为由大量的循环和递归调用，所以执行效率低。
 
 
