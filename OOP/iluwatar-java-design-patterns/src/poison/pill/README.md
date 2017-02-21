@@ -15,7 +15,6 @@ graceful shutdown for separate distributed consumption process.
 如果不发送毒药，那么消费者自己也不敢自杀，因为不知道还么有没有消息需要处理。
 
 所有整个过程有趣有趣...所以少年，还是多看代码吧`
-`
 
 ![alt text](https://github.com/iluwatar/java-design-patterns/raw/master/poison-pill/etc/poison-pill.png)
 
