@@ -1,2 +1,10 @@
 eclipse.preferences.version=1
 encoding//src/poison/pill/App.java=UTF-8
+encoding//src/poison/pill/Consumer.java=UTF-8
+encoding//src/poison/pill/Message.java=UTF-8
+encoding//src/poison/pill/MessageQueue.java=UTF-8
+encoding//src/poison/pill/MqPublishPoint.java=UTF-8
+encoding//src/poison/pill/MqSubscribePoint.java=UTF-8
+encoding//src/poison/pill/Producer.java=UTF-8
+encoding//src/poison/pill/SimpleMessage.java=UTF-8
+encoding//src/poison/pill/SimpleMessageQueue.java=UTF-8
