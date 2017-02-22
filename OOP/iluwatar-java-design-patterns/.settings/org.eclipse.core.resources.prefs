@@ -8,3 +8,7 @@ encoding//src/poison/pill/MqSubscribePoint.java=UTF-8
 encoding//src/poison/pill/Producer.java=UTF-8
 encoding//src/poison/pill/SimpleMessage.java=UTF-8
 encoding//src/poison/pill/SimpleMessageQueue.java=UTF-8
+encoding//src/twin/App.java=UTF-8
+encoding//src/twin/BallItem.java=UTF-8
+encoding//src/twin/BallThread.java=UTF-8
+encoding//src/twin/GameItem.java=UTF-8
