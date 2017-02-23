@@ -7,7 +7,7 @@
 * [python参数的传递](program_language/python/pass_arguments.md) *2017-02-08 11:15:00*
 * [python简洁的代价 —— python的劣势](program_language/python/disadvantage.md) *2017-02-07 10:25:30*
 * [【改编】某些python相关的难点](program_language/python/python_interview.md) *2017-02-06 17:40:32* 
-* [所有设计模式的要点](OOP/outline_of_design_pattern.md) *2017-02-04 16:44:37* 
+* [GoF 24个经典设计模式的要点](OOP/outline_of_design_pattern.md) *2017-02-04 16:44:37* 
 * [用java实现简洁版的快速排序](program_language/java/java_quick_sort.md) *2017-02-03 11:05:29*
 * [读《松本行弘的程序世界》有感](book/matsumoto_yukihiro_code_no_sekai.md) *2017-02-03 10:05:29*
 * [代理模式](OOP/proxy_pattern.md) *2017-01-28 11:34:03*
