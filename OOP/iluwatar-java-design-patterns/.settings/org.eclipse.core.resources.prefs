@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
+encoding//src/callback/App.java=UTF-8
+encoding//src/callback/Callback.java=UTF-8
+encoding//src/callback/LambdasApp.java=UTF-8
+encoding//src/callback/SimpleTask.java=UTF-8
+encoding//src/callback/Task.java=UTF-8
 encoding//src/poison/pill/App.java=UTF-8
 encoding//src/poison/pill/Consumer.java=UTF-8
 encoding//src/poison/pill/Message.java=UTF-8
