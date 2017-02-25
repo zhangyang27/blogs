@@ -20,20 +20,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package callback;
+package dao;
 
-/** 
- * This example generates the exact same output as {@link App} however the callback has been
- * defined as a Lambdas expression.
- * 产出和APP一样的结果，只是回调函数用lambdas来表示了。
- * 但在Java 8以后才支持。
- */
-public class LambdasApp {
-	/*
-	public static void main(String[] args) {
-		Task task = new SimpleTask();
-		Callback callback = ()->System.out.println("执行回调函数"); java 8 才支持
-		task.executeWith(c);
-	}*/
-	
+public final class CustomerSchemaSql {
+
+  private CustomerSchemaSql() {}
+
+  public static final String CREATE_SCHEMA_SQL = "CREATE TABLE CUSTOMERS (ID NUMBER, FNAME VARCHAR(100), "
+      + "LNAME VARCHAR(100))";
+
+  public static final String DELETE_SCHEMA_SQL = "DROP TABLE CUSTOMERS";
+
 }
