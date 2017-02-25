@@ -4,7 +4,7 @@
 Object provides an abstract interface to some type of database or
 other persistence mechanism.
 
-`对不同类型的数据库或者是别的持久化方案提供抽象接口的对象`
+`对不同类型的数据库或者别的持久化方案提供抽象接口的对象`
 
 补充:
 
