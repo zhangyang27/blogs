@@ -1,5 +1,6 @@
 #### blogs
 
+* [延迟加载模式](OOP/iluwatar-java-design-patterns/src/lazy/loading/) *2017-02-26 10:34:20*
 * [事件驱动架构](OOP/iluwatar-java-design-patterns/src/event/driven/architecture/) *2017-02-25 16:42:33*
 * [DAO模式](OOP/iluwatar-java-design-patterns/src/dao) *2017-02-25 14:45:56*
 * [回调模式](OOP/iluwatar-java-design-patterns/src/callback/) *2017-02-24 23:23:21*
