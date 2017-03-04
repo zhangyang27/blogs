@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>learning_vuejs</title>
+	<script src="https://cdn.bootcss.com/vue/2.2.1/vue.js"></script>
+  </head>
+  <body>
+	<div id="app" >
+		<table border="1">
+			<thead>
+				<tr>
+					<th v-if="isTwoCol" v-for="c in extraCol" :colspan="c.colspan">{{ c.title }}</th>
+				</tr>
+				<tr>
+					<th v-for="c in columns">{{ c }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="entry in tableData">
+					  <td v-for="key in columns">
+						{{entry[key]}}
+					  </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script>
+		new Vue({
+		  el: '#app',
+		  data: {
+			isTwoCol:true,
+			extraCol:[
+				{title:"merge2",colspan:2},
+				{title:"merge1",colspan:1},
+			],
+			columns:['id','name','age'],
+			tableData: [
+				  {id:1, name:"John",age:"20"},
+				  {id:2, name:"Jane",age:"24"},
+				  {id:3, name:"Susan",age:"16"},
+				  {id:4, name:"Chris",age:"55"},
+				  {id:5, name:"Dan",age:"40"}
+			]
+		  }
+		})
+    </script>
+  </body>
+</html>
+
