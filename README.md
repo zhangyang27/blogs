@@ -1,6 +1,6 @@
 #### blogs
 
-* [特别的SQL语句汇集]() *2017-03-03 22:31:48*
+* [特别的SQL语句汇集](database/special_sql.md) *2017-03-03 22:31:48*
 * [异步方法调用](OOP/iluwatar-java-design-patterns/src/async/method/invocation/) *2017-03-01 22:11:00*
 * [抽象文档模式](OOP/iluwatar-java-design-patterns/src/abstract_/document/) *2017-02-26 16:37:23*
 * [延迟加载模式](OOP/iluwatar-java-design-patterns/src/lazy/loading/) *2017-02-26 10:34:20*
