@@ -87,6 +87,17 @@
 * 优点：创建一个新对象的实例比较复杂时，使用原型模式可以简化对象的创建。与工厂创建对象需要提供工厂类相比，原型模式简化了代码和创建过程。可以使用深克隆来保存对象状态。
 * 缺点：每个类都需要配备克隆方法；当多个对象嵌套引用的情况时，为了完成深克隆将使每一层的类都支持深克隆，实现起来比较麻烦。
 
+#### 建造者
+* 定义：将一个复杂对象的构建与它的表示分离，使得同样的建造过程可以创建不同的表示。
+	* 英文：Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+	* `表示`一次还挺理解：建造过程可以认为是Director类执行的过程，而不同表示我认为是Builder的不同子类。
+	* 这是一种使用频率低的创建对象的模式。建造者模式为客户端返回的不是一个简单产品，而是一个由多个部件组成的复杂产品。
+* 图：<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Builder_UML_class_diagram.svg" width="50%" height="50%">
+* 场景：需要生成的产品对象有复杂的内部结构，这些产品对象通常包含多个成员变量。所生产的产品的组成部分和生产过程都类似。
+* 例子：视频播放器作为一个复杂对象，有不同模式：精简模式和完整模式，不同模式也遵循相似的构造顺序和组成部分；RPG游戏里创建不同的角色，但是都遵循相同建造过程（手、足、脚、头、衣服）。[java.lang.StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html); [java.nio.ByteBuffer](http://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html#put-byte-); [java.lang.StringBuffer](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html#append-boolean-); [java.lang.Appendable](http://docs.oracle.com/javase/8/docs/api/java/lang/Appendable.html); [Apache Camel builders](https://github.com/apache/camel/tree/0e195428ee04531be27a0b659005e3aa8d159d23/camel-core/src/main/java/org/apache/camel/builder)。
+* [code](java_design_pattern_code/src/builder)
+* 优点：客户端不用知道内部组成细节，将产品本身和产品的创建解耦，相同的创建过程可以创建不同的对象。具体建造者间相互独立，互不影响，方便替换和增加。精细化控制产品的创建过程，将复杂产品的创建过程分布在不同的方法里。
+* 缺点：要求创建的产品必须有较多的共同点，如组成部分相似，这限制了该模式的使用；如果产品内部结果复杂多变，肯定就需要大量具体建造者，这讲导致系统庞大，更难理解和运行；
 
 ### 结构型模式
 * 关注如何组织类与对象，形成某种结构。
@@ -249,7 +260,7 @@
 * 场景：将复杂的算法分割，将算法中固定不变的部分设计为模板方法和父类的具体方法，需要改变的地方由子类实现。也可实现子类对父类的反向控制（子类重新赋值isPaint决定Paint是否执行）。
 * 例子：餐馆吃饭，点菜->吃->买单，点菜和买单步骤变化不大，吃的步骤变化多端。
 * [code](java_design_pattern_code/src/template_method)
-* 优点：子类的某些算法的实现不会算法的执行次序；代码复用技术；可以由子类实现反向控制；不同子类实现的方法不同，方便扩展和修改。
+* 优点：子类的某些算法的实现不会影响算法的执行次序；代码复用技术；可以由子类实现反向控制；不同子类实现的方法不同，方便扩展和修改。
 * 缺点：每个实现都需要一个子类，可能会导致类太多，系统越发庞大。
 
 #### 访问者
