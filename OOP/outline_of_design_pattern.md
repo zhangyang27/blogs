@@ -3,7 +3,7 @@
 ### 原则
 面向对象设计的目标是支持可维护性复用，既要保证设计方案和代码的重用，又要保证易于扩展和修改。因此前辈们总结了几个指导性原则。
 显然下面这些著名的设计模式都不程度满足下列原则。
-<img src="https://github.com/zhangyang27/blogs/raw/master/images/OOP_principle_llsaf.png" width="50%" height="50%">
+<img src="https://github.com/zhangyang27/blogs/raw/master/images/OOP_principle_llsaf.png" width="80%" height="80%">
 
 ### 创建性模式
 * 关注对象的创建。
@@ -94,10 +94,11 @@
 	* 这是一种使用频率低的创建对象的模式。建造者模式为客户端返回的不是一个简单产品，而是一个由多个部件组成的复杂产品。
 * 图：<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Builder_UML_class_diagram.svg" width="50%" height="50%">
 * 场景：需要生成的产品对象有复杂的内部结构，这些产品对象通常包含多个成员变量。所生产的产品的组成部分和生产过程都类似。
-* 例子：视频播放器作为一个复杂对象，有不同模式：精简模式和完整模式，不同模式也遵循相似的构造顺序和组成部分；RPG游戏里创建不同的角色，但是都遵循相同建造过程（手、足、脚、头、衣服）。[java.lang.StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html); [java.nio.ByteBuffer](http://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html#put-byte-); [java.lang.StringBuffer](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html#append-boolean-); [java.lang.Appendable](http://docs.oracle.com/javase/8/docs/api/java/lang/Appendable.html); [Apache Camel builders](https://github.com/apache/camel/tree/0e195428ee04531be27a0b659005e3aa8d159d23/camel-core/src/main/java/org/apache/camel/builder)。
+* 例子：视频播放器作为一个复杂对象，有不同模式：精简模式和完整模式，不同模式也遵循相似的构造顺序和组成部分；RPG游戏里创建不同的角色，但是都遵循相同建造过程（手、足、脚、头、衣服）。[java.lang.StringBuilder](http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html); [java.nio.ByteBuffer](http://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html#put-byte-);  [java.lang.Appendable](http://docs.oracle.com/javase/8/docs/api/java/lang/Appendable.html); [Apache Camel builders](https://github.com/apache/camel/tree/0e195428ee04531be27a0b659005e3aa8d159d23/camel-core/src/main/java/org/apache/camel/builder)。
 * [code](java_design_pattern_code/src/builder)
 * 优点：客户端不用知道内部组成细节，将产品本身和产品的创建解耦，相同的创建过程可以创建不同的对象。具体建造者间相互独立，互不影响，方便替换和增加。精细化控制产品的创建过程，将复杂产品的创建过程分布在不同的方法里。
-* 缺点：要求创建的产品必须有较多的共同点，如组成部分相似，这限制了该模式的使用；如果产品内部结果复杂多变，肯定就需要大量具体建造者，这讲导致系统庞大，更难理解和运行；
+* 缺点：要求创建的产品必须有较多的共同点，如组成部分相似，这限制了该模式的使用；如果产品内部结果复杂多变，肯定就需要大量具体建造者，这将导致系统庞大，更难理解和运行；
+* StringBuilder和建造者模式没有关系[参考](http://stackoverflow.com/questions/5238007/stringbuilder-and-builder-pattern)
 
 ### 结构型模式
 * 关注如何组织类与对象，形成某种结构。

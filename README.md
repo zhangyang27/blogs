@@ -1,5 +1,7 @@
 #### blogs
 
+* [数据可视化的调研](others/data_visualization_survey.md) *2017-03-09 09:42:00*
+* [SQL：取某列第 N 大的数](database/Nth_Highest_Salary.md) *2017-03-04 20:12:38*
 * [vue.js入门与表格实例](web/vue_tutorial.md) *2017-03-04 20:12:38*
 * [特别的SQL语句汇集](database/special_sql.md) *2017-03-03 22:31:48*
 * [异步方法调用](OOP/iluwatar-java-design-patterns/src/async/method/invocation/) *2017-03-01 22:11:00*
