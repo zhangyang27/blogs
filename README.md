@@ -1,5 +1,6 @@
 #### blogs
 
+* [saiku二次开发构建](BI/saiku/saiku_second_development_build.md) *2017-03-11 12:47:12*
 * [数据可视化的调研](others/data_visualization_survey.md) *2017-03-09 09:42:00*
 * [SQL：取某列第 N 大的数](database/Nth_Highest_Salary.md) *2017-03-04 20:12:38*
 * [vue.js入门与表格实例](web/vue_tutorial.md) *2017-03-04 20:12:38*
