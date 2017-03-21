@@ -1,5 +1,6 @@
 #### blogs
 
+* [mysql基础知识](database/basics.md) *2017-03-20 19:33:02*
 * [saiku二次开发构建](BI/saiku/saiku_second_development_build.md) *2017-03-11 12:47:12*
 * [数据可视化的调研](others/data_visualization_survey.md) *2017-03-09 09:42:00*
 * [SQL：取某列第 N 大的数](database/Nth_Highest_Salary.md) *2017-03-04 20:12:38*
